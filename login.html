@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>Login and Registration Form Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+    <!--<div class="header">
+        <h1>Omnifood</h1>
+    </div>-->
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" id="name" placeholder="Name" />
+
+                <input type="password" id="rpassword" placeholder="Password" />
+                <input type="text" id="email" placeholder="Email Id" />
+                <button id="login">Register</button>
+                <p class="message">Already Registered? <a href="#">Login</a>
+                </p>
+            </form>
+            <form class="login-form">
+                <input type="text" id="username" placeholder="User name" />
+                <input type="password" id="password" placeholder="Password" />
+                <button id="login">login</button>
+                <p class="message">Not Registered? <a href="#">Register</a></p>
+            </form>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+    <script>
+        $('.message a').click(function() {
+            $('form').animate({
+                height: "toggle",
+                opacity: "toggle"
+            }, "slow");
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var password = $("#password").val();
+                // Checking for blank fields.
+                if (email == '' || password == '') {
+                    $('input[type="text"],input[type="password"]').css("border", "2px solid red");
+                    $('input[type="text"],input[type="password"]').css("box-shadow", "0 0 3px red");
+                    alert("Please fill all fields...!!!!!!");
+                } else {
+                    $.post("login.php", {
+                            email1: email,
+                            password1: password
+                        },
+                        function(data) {
+                            if (data == 'Invalid Email.......') {
+                                $('input[type="text"]').css({
+                                    "border": "2px solid red",
+                                    "box-shadow": "0 0 3px red"
+                                });
+                                $('input[type="password"]').css({
+                                    "border": "2px solid #00F5FF",
+                                    "box-shadow": "0 0 5px #00F5FF"
+                                });
+                                alert(data);
+                            } else if (data == 'Email or Password is wrong...!!!!') {
+                                $('input[type="text"],input[type="password"]').css({
+                                    "border": "2px solid red",
+                                    "box-shadow": "0 0 3px red"
+                                });
+                                alert(data);
+                            } else if (data == 'Successfully Logged in...') {
+                                $("form")[0].reset();
+                                $('input[type="text"],input[type="password"]').css({
+                                    "border": "2px solid #00F5FF",
+                                    "box-shadow": "0 0 5px #00F5FF"
+                                });
+                                alert(data);
+                            } else {
+                                alert(data);
+                            }
+                        });
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#register").click(function() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var rpassword = $("#rpassword").val();
+                if (name == '' || email == '' || password == '') {
+                    alert("Please fill all fields...!!!!!!");
+                } else if ((rpassword.length) < 8) {
+                    alert("Password should atleast 8 character in length...!!!!!!");
+                } else {
+                    $.post("register.php", {
+                        name1: name,
+                        email1: email,
+                        rpassword1: rpassword
+                    }, function(data) {
+                        if (data == 'You have Successfully Registered.....') {
+                            $("form")[0].reset();
+                        }
+                        alert(data);
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
