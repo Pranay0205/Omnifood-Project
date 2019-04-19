@@ -1,43 +1,46 @@
 <html>
-
 <head>
-    <title>Login and Registration Form Design</title>
+<title>Login and Registration Form Design</title>
     <link rel="stylesheet" href="style.css">
+    <link src="loginj.js">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <body>
     <!--<div class="header">
         <h1>Omnifood</h1>
     </div>-->
     <div class="login-page">
-        <div class="form">
-            <form class="register-form">
-                <input type="text" id="name" placeholder="Name" />
-
-                <input type="password" id="rpassword" placeholder="Password" />
-                <input type="text" id="email" placeholder="Email Id" />
-                <button id="login">Register</button>
-                <p class="message">Already Registered? <a href="#">Login</a>
-                </p>
-            </form>
-            <form class="login-form">
-                <input type="text" id="username" placeholder="User name" />
-                <input type="password" id="password" placeholder="Password" />
-                <button id="login">login</button>
-                <p class="message">Not Registered? <a href="#">Register</a></p>
-            </form>
-        </div>
+    <div class="form">
+        <form class="register-form">
+            <input type="text" id="name" placeholder="Name"/>
+            <input type="password" id="rpassword" placeholder="Password"/>
+            <input type="text" id="email" placeholder="Email Id"/>
+            <input type="Text" id="address" placeholder="Address"/>
+            <button id="Register">Register</button>
+            <p class="message">Already Registered? <a href="#">Login</a>
+            </p>
+        </form>
+        <form class="login-form">
+            <input type="text" id="username" placeholder="User name"/>
+            <input type="password" id="password" placeholder="Password"/>
+            <button id="Login">Login </button>
+            <p class="message">Not Registered? <a href="#">Register</a></p>
+        </form>
     </div>
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="loginj.js"></script>
+    <script type="text/javascript" src="registerj.js"></script>
 
     <script>
-        $('.message a').click(function() {
-            $('form').animate({
-                height: "toggle",
-                opacity: "toggle"
-            }, "slow");
+        $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
         });
+    
+
     </script>
-   
-</body></html>
+
+
+</body>
+</html>

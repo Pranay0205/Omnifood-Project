@@ -1,10 +1,12 @@
 
+        
         $(document).ready(function() {
         $("#Register").click(function() {
         var name = $("#name").val();
         var email = $("#email").val();
         var rpassword = $("#rpassword").val();
-        if (name == '' || email == '' || password == '') {
+        var address= $("#address").val();
+        if (name == '' || email == '' || password == ''||address=='') {
             alert("Please fill all fields...!!!!!!");
             $('input[type="text"],input[type="password"]').css("border", "2px solid red");
             $('input[type="text"],input[type="password"]').css("box-shadow", "0 0 3px red");
@@ -14,7 +16,8 @@
         $.post("register.php", {
         name1: name,
         email2: email,
-        rpassword1: rpassword
+        rpassword1: rpassword,
+        address1: address
         }, function(data) {
         if (data == 'You have Successfully Registered.....') {
         $("form")[0].reset();
@@ -24,3 +27,4 @@
         }
         });
         });
+
