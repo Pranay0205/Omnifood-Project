@@ -15,6 +15,7 @@ $db = mysqli_select_db($conn,"college");
 $name=$_POST['name1']; // Fetching Values from URL.
 $email=$_POST['email2'];
 $password= ($_POST['rpassword1']); // Password Encryption, If you like you can also leave sha1.
+$address=isset($_POST['address1']);
 // Check if e-mail address syntax is valid or not
 $email = filter_var($email, FILTER_SANITIZE_EMAIL); // Sanitizing email(Remove unexpected symbol like <,>,?,#,!, etc.)
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -23,7 +24,7 @@ echo "Invalid Email.......";
 $result = mysqli_query($conn,"SELECT * FROM registration WHERE email='$email'");
 $data = mysqli_num_rows($result);
 if(($data)==0){
-$query = mysqli_query($conn,"insert into registration(email, name, password) values ('$email', '$name', '$password')"); // Insert query
+$query = mysqli_query($conn,"insert into registration(email, name, password,address) values ('$email', '$name', '$password', '$address')"); // Insert query
 if($query){
 echo "You have Successfully Registered.....";
 }else
