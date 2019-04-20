@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Omnifood Menu</title>
     <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
@@ -150,6 +151,81 @@
 
 
     </section>
+
+    <section class="cart sections">
+        <h2>CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-col">Food Item(s)</span>
+
+            <span class="cart-price cart-header cart-col">Price</span>
+
+            <span class="cart-quantity cart-header cart-col">Quantity</span>
+
+        </div>
+        <div class="cart-items">
+            <div class="cart-row">
+                <div class="cart-item cart-col">
+                    <img src="resources/css/img/Meals/Kadhai Paneer.jpg" height="100" width="100">
+                    <span class="cart-item-title">Kadhai Paneer</span>
+                </div>
+
+                <span class="cart-price cart-col">&#x20B9;140</span>
+
+                <div class="cart-quantity cart-col">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger " role="button">Remove</button>
+                </div>
+            </div>
+
+            <div class="cart-row">
+                <div class="cart-item cart-col">
+                    <img class="cart-item-image" src="resources/css/img/Meals/MatarPaneer.jpg" height="100" width="100">
+                    <span class="cart-item-title">Matar Paneer</span>
+                </div>
+
+                <span class="cart-price cart-col">&#x20B9;150</span>
+
+                <div class="cart-quantity cart-col">
+                    <input class="cart-quantity-input" type="number" value="2">
+                    <button class="btn btn-danger " role="button">Remove</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">&#x20B9;290</span>
+        </div>
+        <div>
+            <button role="button" class="btn btn-primary btn-purchase">PURCHASE</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">iOS App</a></li>
+                    <li><a href="#">Android App</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Copyright &copy; 2015 by Omnifood. All rights reserved.
+            </p>
+        </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="resources/js/menu.js"></script>
 
