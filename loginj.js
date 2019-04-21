@@ -18,7 +18,7 @@ $(document).ready(function(){
     $('input[type="text"],input[type="password"]').css({"border":"2px solid red","box-shadow":"0 0 3px red"});
     alert(data);
     } else if(data=='Successfully Logged in...'){
-        window.location="http://localhost/Omnifood-Project-master/index.html"
+        window.location="http://Omnifood-Project-master/index.html"
     //$('input[type="text"],input[type="password"]').css({"border":"2px solid #00F5FF","box-shadow":"0 0 5px #3FBF3F"});
     alert(data);
     } else{
