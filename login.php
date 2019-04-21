@@ -24,6 +24,7 @@ $result = mysqli_query($conn,"SELECT * FROM registration WHERE email='$email' AN
 $data = mysqli_num_rows($result);
 if($data==1){
 echo "Successfully Logged in...";
+
 }else{
 echo "Email or Password is wrong...!!!!";
 }
